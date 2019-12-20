@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { News } from './news.model';
+import { SavedService } from '../saved/saved.service';
 
 @Injectable({
   providedIn: 'root'
@@ -49,7 +50,7 @@ export class PostsService {
     },
   ];
 
-  constructor() { }
+  constructor(private savedSvc: SavedService) { }
 
   getAllNews() {
     return [...this.news1];
@@ -63,5 +64,16 @@ export class PostsService {
     };
   }
 
+  changeStatus(id: string, idNews: string, title: string, content: string, name: string, img: string){
+    const idxNews = this.news1.findIndex(news => news.id === idNews);
+
+    if (this.news1[idxNews].status == 1) {
+      this.news1[idxNews].status = 0;
+      this.savedSvc.addSaved(id, name, title, content, img);
+    } else {
+      this.news1[idxNews].status = 1;
+      this.savedSvc.delSaved(id);
+    }
+  }
 
 }

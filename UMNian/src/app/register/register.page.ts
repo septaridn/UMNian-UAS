@@ -20,7 +20,7 @@ export class RegisterPage implements OnInit {
       { type: 'required', message: 'Name is required.' }
     ],
     'phone': [
-      { type: 'required', message: 'Phone is required.' }
+      { type: 'required', message: 'Phone Number is required.' }
     ],
     'locate': [
       { type: 'required', message: 'Location is required.' }
