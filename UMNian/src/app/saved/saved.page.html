@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Saved Article</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+      <ion-list>
+        <ion-item *ngFor="let saved of savedNews">
+          <ion-thumbnail slot="start">
+            <ion-img [src]="saved.img"></ion-img>
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{ saved.title }}</h2>
+            <p>{{ saved.content }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-content>
