@@ -40,7 +40,7 @@ export class NewsDetailPage implements OnInit {
       this.savedSvc.addSaved(id, name, title, content, img);
       this.loadingCtrl.create({
         keyboardClose: true,
-        message: 'Updating your favorite songs...'
+        message: 'Updating your favorite news/article...'  
       })
       .then(loadingEl => {
         loadingEl.present();
@@ -52,7 +52,7 @@ export class NewsDetailPage implements OnInit {
       this.savedSvc.delSaved(id);
       this.loadingCtrl.create({
         keyboardClose: true,
-        message: 'Updating your favorite songs...'
+        message: 'Updating your favorite news/article...'
       })
       .then(loadingEl => {
         loadingEl.present();
